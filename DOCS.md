@@ -383,7 +383,7 @@ Most organizations require that certain documents — policies, procedures, cont
 ### When to Use It
 
 - Before submitting a policy document for legal or compliance sign-off, to catch gaps early
-- When a project proposal must meet a defined gate criteria and the author wants to self-check before formal review
+- When a project proposal must meet a defined gate criterion and the author wants to self-check before formal review
 - When a procurement document requires specific clauses and a first-pass screen is needed before routing
 - When a team is producing a new procedure and wants to validate it against the organizational template before publishing
 - When a compliance team is managing a high volume of submissions and needs triage assistance to prioritize
