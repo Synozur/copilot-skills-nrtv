@@ -406,7 +406,7 @@ sharepoint/
     SKILL.md
 ```
 
-The front matter requires `name` and `description`. The skill depends on a configured Compliance Requirements list on the SharePoint site to retrieve the appropriate checklist for each document type.
+The front matter requires `name` and `description`. The skill depends on a configured Compliance Requirements list on the SharePoint site or another configured reference source to retrieve the appropriate checklist for each document type.
 
 ### How to Use It
 
