@@ -126,7 +126,7 @@ The front matter uses a multi-line `description` block listing all trigger phras
 - *"Should I commit to leading this engagement? Check my capacity."*
 - *"Is this a good time to add another workstream?"*
 - *"Bandwidth check — do I have room to sign this before end of month?"*
-- *"Before I agree to this, review my next six weeks."*
+- *"Before I agree to this, review my next 30 days."*
 
 ### Example Output
 
