@@ -177,7 +177,7 @@ Walking into a meeting without context is a missed opportunity. The Stakeholder 
 
 ### How It Works
 
-The skill begins by resolving the person's identity against the directory, surfacing candidates if the name is ambiguous rather than guessing. It then runs four concurrent lookups across email (messages received from and sent to the person) and Teams (direct chat history and any channel mentions), covering the past 90 days.
+The skill begins by resolving the person's identity against the directory, surfacing candidates if the name is ambiguous rather than guessing. It then gathers relevant signals from the past 90 days across email (messages received from and sent to the person) and Teams, including direct chat history and, when available, channel mentions.
 
 From those results, it extracts three categories of signal: commitments the user made (things they said they would do, with dates and message citations); open or unresolved items (questions from the stakeholder with no visible reply, or promised deliverables with no follow-through); and communication patterns (cadence, response gaps, and any urgent or escalation language, quoted verbatim without interpretation).
 
