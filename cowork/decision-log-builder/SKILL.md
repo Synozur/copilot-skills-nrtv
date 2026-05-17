@@ -1,6 +1,3 @@
-Here's my draft. Want me to write it as-is, or change anything?
-
-```markdown
 ---
 name: decision-log-builder
 description: Build a structured decision log from emails, meetings, and Teams messages. Use when user asks to "log decisions", "track decisions", "what did we decide", "what we agreed", "why was this decided", "decision history", or "build a decision log". Do NOT use for action item extraction (use meeting-intel), open question tracking, or general meeting summaries.
@@ -65,4 +62,3 @@ Build a structured decision log from the user's communications by identifying fi
 - **Ground every entry in a source.** Each row must trace to a specific email, meeting, or chat — link via alias brackets.
 - **Do not fabricate rationale or owners.** If not stated explicitly, leave blank or mark "Not stated".
 - **Respect privacy.** If a decision appears in a `private` or `confidential` event, omit the subject and note "Private meeting" instead.
-```
