@@ -319,7 +319,7 @@ The skill begins by asking for the role's description or key responsibilities if
 
 Content is ranked by three factors: relevance to the stated role, recency (recently updated content is favored over older material), and the presence of a clear owner or official designation suggesting it is authoritative. From this ranked set, the skill constructs a three-tier onboarding path: First Week (essential reading, capped at seven items to avoid overwhelm), Background (helpful context for deeper understanding), and Reference (materials to consult when specific situations arise).
 
-Each item in the path includes the document title with a link and a single sentence explaining why it is relevant to this specific role. If the site does not contain enough structured content to build a meaningful path, the skill states this clearly rather than padding the output with marginal material. No content is created or modified — the output is guidance only.
+Each item in the path includes the document title with a link and a single sentence explaining why it is relevant to this specific role. If the site does not contain enough structured content to build a meaningful path, the skill states this clearly and provides the best available relevant resources instead of padding the output with marginal material. No content is created or modified — the output is guidance only.
 
 ### How to Build It
 
