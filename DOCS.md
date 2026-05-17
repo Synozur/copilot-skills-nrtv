@@ -251,7 +251,7 @@ SharePoint environments accumulate content over time, and outdated policies, pro
 
 The skill scans every document and page in the specified site or library, evaluating each item against a set of observable signals: how long ago it was last modified, when it was last accessed (where that metadata is available), whether it has a named owner or author, and whether its title or content suggests it is authoritative material — such as a policy, procedure, or guideline.
 
-Items without explicit review or expiration metadata are assessed comparatively — content that is significantly older than similar items in the same library is treated as a candidate for review. Where formal review metadata exists (such as a "Review Date" column), that takes precedence.
+Items without explicit review or expiration metadata are assessed comparatively — content that is significantly older than similar items in the same library is treated as a candidate for review. Where formal review metadata exists (such as a "Review Date" column), it is used to refine the assessment alongside those other signals.
 
 Each flagged item is classified into one of three priority tiers: High Priority for content that appears outdated and carries high organizational impact; Medium Priority for content that is possibly stale or has unclear ownership; and Low Priority for older content that appears lower risk. The output is a prioritized report with title, last modified date, owner, and the specific reason for the flag, followed by a summary of patterns — such as clusters of outdated content within a particular team's area or systemic ownership gaps.
 
