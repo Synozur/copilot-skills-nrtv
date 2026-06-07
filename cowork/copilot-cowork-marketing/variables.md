@@ -12,7 +12,7 @@ Do not leave any value as generic boilerplate.
 | `{products}` | _Your products, each with a one-line description_ |
 | `{icp_description}` | _Who you sell to: role, company size, industry, stage_ |
 | `{value_prop}` | _The specific outcome you deliver, in 1-2 sentences_ |
-| `{positioning_framework}` | _MPF: one-line statement of who it's for, what it does, and why it's different from the named competitors_ |
+| `{positioning_framework}` | _MPF (Marketing and Positioning Framework): one-line statement of who it's for, what it does, and why it's different from the named competitors_ |
 | `{your_category}` | _Your product category, e.g. "sales engagement"_ |
 | `{competitors}` | _3-5 direct competitors by name_ |
 | `{proof_points}` | _2-3 case studies, metrics, or social-proof anchors_ |
