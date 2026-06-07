@@ -6,7 +6,7 @@ Each skill is a folder containing a `SKILL.md` (name + description frontmatter, 
 
 ## Quick start
 
-Point Cowork at this folder and say **"install the marketing skills."** That runs the **`install-marketing-skills`** skill, which interviews you to capture your company, products, ICP, MPF (market positioning framework), proof points, brand voice, competitors, and channels — drafting every answer from your own M365 data via Work IQ so you mostly confirm rather than type. It then writes the completed `variables.md` and the SharePoint folder scaffold the other seven skills depend on. Run it first.
+Point Cowork at this folder and say **"install the marketing skills."** That runs the **`install-marketing-skills`** skill, which interviews you to capture your company, products, ICP, MPF (Marketing and Positioning Framework), proof points, brand voice, competitors, and channels — drafting every answer from your own M365 data via Work IQ so you mostly confirm rather than type. It then writes the completed `variables.md` and the SharePoint folder scaffold the other seven skills depend on. Run it first.
 
 ## What's inside
 

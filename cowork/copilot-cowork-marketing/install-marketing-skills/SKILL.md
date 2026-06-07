@@ -1,6 +1,6 @@
 ---
 name: install-marketing-skills
-description: Onboarding installer for the Copilot Cowork marketing skills library. Run this first when a user points at the copilot-cowork-marketing folder and asks to install, set up, configure, or onboard the marketing skills. Conducts a guided interview to capture company, products, ICP, MPF (market positioning framework), value prop, proof points, brand voice, competitors, and channels - drafting every answer from the user's own M365 data via Work IQ and asking them only to confirm or correct. Writes the populated variables.md and the SharePoint folder scaffold the other seven skills depend on. Triggers on "install the skills", "set up the marketing skills", "onboard", "configure this library", "get started".
+description: Onboarding installer for the Copilot Cowork marketing skills library. Run this first when a user points at the copilot-cowork-marketing folder and asks to install, set up, configure, or onboard the marketing skills. Conducts a guided interview to capture company, products, ICP, MPF (Marketing and Positioning Framework), value prop, proof points, brand voice, competitors, and channels - drafting every answer from the user's own M365 data via Work IQ and asking them only to confirm or correct. Writes the populated variables.md and the SharePoint folder scaffold the other seven skills depend on. Triggers on "install the skills", "set up the marketing skills", "onboard", "configure this library", "get started".
 ---
 
 # Install Marketing Skills
@@ -31,7 +31,7 @@ Before asking the user anything, build a draft profile from their M365 environme
 1. **Company identity** — pull the organization name and description from the tenant profile and the most recent company-overview material in SharePoint.
 2. **Products** — search SharePoint for product one-pagers, pitch decks, datasheets, and website exports. List the products and a one-line description of each.
 3. **ICP** — infer from CRM-adjacent docs, sales decks, and the recipients and language in recent prospect/customer Outlook threads. Who do they actually sell to?
-4. **Value prop and MPF (market positioning framework)** — synthesize from positioning docs, homepage copy, and how the team describes the product in Teams and email. Capture the category, the core value prop, the differentiation, and the competitors named.
+4. **Value prop and MPF (Marketing and Positioning Framework)** — synthesize from positioning docs, homepage copy, and how the team describes the product in Teams and email. Capture the category, the core value prop, the differentiation, and the competitors named.
 5. **Proof points** — pull case studies, win stories, and metrics from SharePoint and closed-deal threads in Outlook.
 6. **Brand voice** — sample 5-10 pieces of the company's published or sent content (LinkedIn exports, newsletters, blog drafts in SharePoint, customer emails) and characterize the actual voice: cadence, formality, vocabulary, what they never say.
 7. **Channels and time zones** — infer publishing channels from existing content and the team's calendar/locale; infer ICP time zones from where customers and meetings cluster.
