@@ -75,3 +75,11 @@ Define these in `variables.md` and save it to a known SharePoint location (e.g. 
 
 - **No positioning clarity.** If you feed `positioning-researcher` generic inputs ("we help B2B companies grow"), every downstream skill produces generic output. Spend the time on `variables.md`.
 - **Content without distribution is invisible.** `distribution-planner` maps the plan, but execution still requires showing up — posting, commenting, engaging.
+
+## License
+
+Copyright 2026 The Synozur Alliance LLC.
+
+This library is licensed under the Apache License, Version 2.0. You may use, modify, and redistribute these skills — including commercially and inside your own company — provided you retain the copyright notice and the contents of the `NOTICE` file. See `LICENSE` for the full terms.
+
+The skills are designed for any person and any company: every company-specific value lives in `variables.md`, which you populate with your own data (the `install-marketing-skills` skill drafts it from your Microsoft 365 environment). No proprietary information from the original authors is embedded in the skills themselves.
