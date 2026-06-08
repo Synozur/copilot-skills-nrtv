@@ -20,6 +20,12 @@ Do not leave any value as generic boilerplate.
 | `{channels}` | _Where you publish, e.g. "LinkedIn, X, blog, newsletter, YouTube"_ |
 | `{time_zones}` | _Primary time zones of your ICP, e.g. "US Eastern, US Pacific"_ |
 | `{sharepoint_root}` | _SharePoint folder holding these assets, e.g. "/Marketing/Cowork"_ |
+| `{brand_primary_color}` | _Primary brand color: hex code + Pantone/CMYK if available, e.g. "#1A3D6E / PMS 7685 C"_ |
+| `{brand_secondary_colors}` | _Up to three secondary/accent colors with hex codes, e.g. "#F4A300 (amber), #FFFFFF (white)"_ |
+| `{brand_fonts}` | _Heading typeface + body typeface + M365 fallbacks, e.g. "Heading: Neue Haas Grotesk (fallback: Calibri); Body: Georgia (fallback: Times New Roman)"_ |
+| `{brand_logo_path}` | _SharePoint folder holding logo files, e.g. "/Marketing/Cowork/brand/logos/" — note which variants are present: horizontal, vertical, icon-only, reversed_ |
+| `{brand_template_word}` | _SharePoint path to the branded Word template (.dotx), or "none — use branded-doc-generator defaults"_ |
+| `{brand_template_pptx}` | _SharePoint path to the branded PowerPoint template (.potx), or "none — use branded-deck-generator defaults"_ |
 
 ## SharePoint layout the skills expect
 
@@ -27,10 +33,13 @@ These skills read upstream inputs and write outputs to predictable locations und
 
 - `{sharepoint_root}/variables.md` — this file
 - `{sharepoint_root}/positioning/` — positioning dossier (output of positioning-researcher)
-- `{sharepoint_root}/brand/` — brand and voice guidelines (input to copywriter and repurposing-engine)
+- `{sharepoint_root}/brand/` — brand and voice guidelines (input to copywriter, repurposing-engine, branded-doc-generator, branded-deck-generator)
+- `{sharepoint_root}/brand/logos/` — logo files: SVG, PNG, reversed variants
+- `{sharepoint_root}/brand/brand-assets.md` — colors, fonts, logo inventory (written by install-marketing-skills)
 - `{sharepoint_root}/calendar/` — editorial calendar (output of content-strategist)
 - `{sharepoint_root}/drafts/` — content drafts (output of copywriter)
 - `{sharepoint_root}/repurposed/` — repurposed asset packages (output of repurposing-engine)
 - `{sharepoint_root}/seo/` — SEO/AEO recommendations (output of seo-aeo-optimizer)
 - `{sharepoint_root}/distribution/` — distribution plans (output of distribution-planner)
 - `{sharepoint_root}/performance/` — weekly performance reports (output of performance-analyst)
+- `{sharepoint_root}/deliverables/` — branded Word and PowerPoint files (output of branded-doc-generator and branded-deck-generator)
