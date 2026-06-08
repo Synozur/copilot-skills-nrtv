@@ -51,7 +51,7 @@ Walk the user through these sections in order. For each, present the Work IQ dra
 7. **Storage** — confirm `{sharepoint_root}`, the SharePoint folder that will hold the whole library's working files.
 8. **Brand assets** — present what the Work IQ pass found in SharePoint and walk through each asset type:
    - **Colors**: confirm `{brand_primary_color}` (one primary, with hex and Pantone/CMYK if available) and `{brand_secondary_colors}` (up to three additional colors). If the brand guide is missing or incomplete, ask the user to provide hex codes directly or share the relevant section.
-   - **Logos**: confirm `{brand_logo_path}` (the SharePoint folder holding logo files). If logos are not yet in SharePoint, offer two options: (a) the user uploads files to SharePoint now and provides the folder path, or (b) mark the path as pending and add it later before running the copywriter or deck-generator skills. Capture whether horizontal, vertical, and icon-only variants are available.
+   - **Logos**: confirm `{brand_logo_path}` (the SharePoint folder holding logo files). If logos are not yet in SharePoint, offer two options: (a) the user uploads files to SharePoint now and provides the folder path, or (b) mark the path as pending and add it later before running `branded-doc-generator` or `branded-deck-generator`. Capture whether horizontal, vertical, and icon-only variants are available.
    - **Fonts**: confirm `{brand_fonts}` — the heading typeface and the body typeface. If fonts are licensed desktop fonts not available in the M365 environment, note the fallback web-safe or Google Font equivalents that will be used in generated Word/PowerPoint outputs.
    - Save everything confirmed to `{sharepoint_root}/brand/brand-assets.md`.
 9. **Branded output skills** — present the results of the skills scan:
@@ -63,7 +63,7 @@ Walk the user through these sections in order. For each, present the Work IQ dra
 Once every section is confirmed:
 
 1. **Create the SharePoint folder scaffold** under `{sharepoint_root}`:
-   `positioning/`, `brand/`, `brand/logos/`, `calendar/`, `drafts/`, `repurposed/`, `seo/`, `distribution/`, `performance/`.
+   `positioning/`, `brand/`, `brand/logos/`, `calendar/`, `drafts/`, `repurposed/`, `seo/`, `distribution/`, `performance/`, `deliverables/`.
 2. **Write the completed `variables.md`** to `{sharepoint_root}/variables.md` with every variable filled in (no remaining placeholders). Use the table format from the library's `variables.md`, including all brand asset variables.
 3. **If the user approved it**, write the voice analysis to `{sharepoint_root}/brand/voice-guidelines.md`.
 4. **Write the brand assets summary** to `{sharepoint_root}/brand/brand-assets.md`. Include: primary and secondary colors (hex + Pantone/CMYK), logo file paths and available variants, heading and body typefaces with fallback equivalents, and a note on any assets still pending upload.
