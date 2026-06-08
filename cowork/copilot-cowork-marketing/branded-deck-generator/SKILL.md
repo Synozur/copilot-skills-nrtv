@@ -59,7 +59,7 @@ The user should provide or confirm:
 4. **Slide count target** (optional) — if the user has a hard limit (e.g., "max 12 slides"), honor it by consolidating rather than cutting content.
 5. **Any structural requirements** — e.g., "lead with the problem slide", "include an ROI calculator slide", "end with a pricing slide".
 
-If the user provides no content, ask before generating placeholder slides.
+If the user provides no content, halt and ask them to supply source material or point to a SharePoint draft. Do not generate slide copy from scratch. If the user only wants a blank structure, produce an outline where every content area is a bracketed label (e.g. `[INSERT PROBLEM STATEMENT]`) — not invented copy.
 
 ## Output
 

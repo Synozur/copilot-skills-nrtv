@@ -49,7 +49,7 @@ The user should provide or confirm:
 3. **Audience** — who will receive this document (prospect, customer, internal, press).
 4. **Any structural requirements** — e.g., "include a sidebar with key stats", "add a cover page with tagline", "needs a table of contents".
 
-If the user provides no content, ask before generating placeholder content.
+If the user provides no content, halt and ask them to supply source material or point to a SharePoint draft. Do not generate placeholder or filler content.
 
 ## Output
 
