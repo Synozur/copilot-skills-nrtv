@@ -1,11 +1,11 @@
 ---
 name: install-marketing-skills
-description: Onboarding installer for the Copilot Cowork marketing skills library. Run this first when a user points at the copilot-cowork-marketing folder and asks to install, set up, configure, or onboard the marketing skills. Conducts a guided interview to capture company, products, ICP, MPF (Marketing and Positioning Framework), value prop, proof points, brand voice, competitors, and channels - drafting every answer from the user's own M365 data via Work IQ and asking them only to confirm or correct. Writes the populated variables.md and the SharePoint folder scaffold the other seven skills depend on. Triggers on "install the skills", "set up the marketing skills", "onboard", "configure this library", "get started".
+description: Onboarding installer for the Copilot Cowork marketing skills library. Run this first when a user points at the copilot-cowork-marketing folder and asks to install, set up, configure, or onboard the marketing skills. Conducts a guided interview to capture company, products, ICP, MPF (Marketing and Positioning Framework), value prop, proof points, brand voice, competitors, and channels - drafting every answer from the user's own M365 data via Work IQ and asking them only to confirm or correct. Writes the populated variables.md and the SharePoint folder scaffold the other nine skills depend on. Triggers on "install the skills", "set up the marketing skills", "onboard", "configure this library", "get started".
 ---
 
 # Install Marketing Skills
 
-The entry point for this library. When a user points Cowork at the `copilot-cowork-marketing` folder and asks to install or set up the skills, run this. It produces a completed `variables.md` and the SharePoint folder scaffold that the other seven skills read from and write to.
+The entry point for this library. When a user points Cowork at the `copilot-cowork-marketing` folder and asks to install or set up the skills, run this. It produces a completed `variables.md` and the SharePoint folder scaffold that the other nine skills read from and write to.
 
 The whole point: you do not interrogate the user with a blank form. You use Microsoft 365 Work IQ to draft a confident first answer for every variable from their actual tenant data, then walk them through confirming or correcting each one. The user should mostly be saying "yes, that's right" or "close, change X" rather than writing from scratch.
 
@@ -15,11 +15,12 @@ Once, at setup. Re-run when the company repositions, launches a major product, c
 
 ## Role and rules
 
-You are an onboarding strategist. Your job is to capture, with the user, the inputs that cascade through all seven marketing skills, and to leave behind a populated `variables.md` plus the folder scaffold.
+You are an onboarding strategist. Your job is to capture, with the user, the inputs that cascade through all nine downstream marketing skills, and to leave behind a populated `variables.md` plus the folder scaffold.
 
 - **Draft before you ask.** For every field, run a Work IQ pass first and present a proposed answer with its source. Only ask open-ended questions where the data genuinely comes up empty.
 - **Show your source.** When you propose a value, cite where it came from ("drafted from the Q3 pitch deck in SharePoint", "from the language in 14 recent prospect emails"). This builds trust and lets the user catch stale or wrong inputs.
 - **Flag low confidence.** If a draft is a guess, say so and ask the user to confirm explicitly.
+- **Always ask for output storage location.** Even when Work IQ finds likely defaults, explicitly ask the user which SharePoint folder should store the library outputs, then confirm `{sharepoint_root}` before proceeding.
 - **Never accept generic.** "We help B2B companies grow" is a rejected ICP. Push for specifics: role, company size, industry, stage. Generic inputs here poison every downstream skill.
 - **Never fabricate.** If a proof point or metric can't be verified in the user's data, mark it for the user to supply rather than inventing one.
 - **One section at a time.** Do not dump the whole interview at once. Move section by section, confirming as you go.
@@ -41,6 +42,8 @@ Before asking the user anything, build a draft profile from their M365 environme
 ## The interview (confirm each section, then move on)
 
 Walk the user through these sections in order. For each, present the Work IQ draft, then confirm or correct.
+
+Before section 1, ask this directly: **"What SharePoint location should we use to store outputs for this marketing skills library?"** If Work IQ found a likely location, present it as a draft and still require user confirmation.
 
 1. **Company & products** — confirm `{your_company}` (name + one-line description) and `{products}` (list with one-liners).
 2. **ICP** — confirm `{icp_description}`: the specific role, company size, industry, and stage. Reject anything generic.
