@@ -1,8 +1,8 @@
 # Marketing Skills Library for Copilot Cowork (M365)
 
-A chained set of seven marketing skills for Copilot Cowork, grounded in your Microsoft 365 environment. Together they take you from positioning research through content production, repurposing, SEO/AEO, distribution, and performance analysis as a single closed loop.
+A chained set of ten marketing skills for Copilot Cowork, grounded in your Microsoft 365 environment. Together they take you from positioning research through content production, repurposing, SEO/AEO, distribution, and performance analysis as a single closed loop.
 
-Each skill is a folder containing a `SKILL.md` (name + description frontmatter, instructions, the user-prompt template it expects, M365 data grounding, and guardrails). Drop the whole `copilot-cowork-marketing` folder into Cowork to ingest the installer plus all seven working skills.
+Each skill is a folder containing a `SKILL.md` (name + description frontmatter, instructions, the user-prompt template it expects, M365 data grounding, and guardrails). Drop the whole `copilot-cowork-marketing` folder into Cowork to ingest the installer plus all nine working skills.
 
 ## Quick start
 
