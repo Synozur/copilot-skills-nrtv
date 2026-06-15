@@ -14,6 +14,7 @@ description: Recommend the most appropriate SharePoint document library for a pi
    - Retrieve all document libraries visible to the user
    - For each library, collect:
      - Library name and description (if set)
+     - The current user's effective permission level (e.g., Read, Contribute, Edit, Full Control) — libraries where the user does not have at least Contribute permission must be excluded from all recommendations before any other evaluation
      - Existing content types or required metadata columns
      - Any retention or sensitivity labels applied at the library level
      - General volume and recency of content (signals whether the library is actively used)
