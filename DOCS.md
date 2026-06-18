@@ -1,6 +1,6 @@
 # Enterprise AI Skills Documentation
 
-This document covers all six AI skills in this repository — three personal skills built for **Copilot Cowork** and three organizational skills built for **Copilot in SharePoint**. Each section explains what the skill does, when to use it, how it works, and how to put it into practice.
+This document covers all twelve AI skill entries in this repository — seven personal skills and bundles built for **Copilot Cowork** and five organizational skills built for **Copilot in SharePoint**. Each section explains what the skill does, when to use it, how it works, and how to put it into practice.
 
 ---
 
@@ -10,11 +10,17 @@ This document covers all six AI skills in this repository — three personal ski
 1. [Decision Log Builder](#1-decision-log-builder)
 2. [Pre-Commitment Capacity Check](#2-pre-commitment-capacity-check)
 3. [Stakeholder Intelligence Brief](#3-stakeholder-intelligence-brief)
+4. [Morning Briefing](#4-morning-briefing)
+5. [Synozur Board](#5-synozur-board)
+6. [Marketing Skills Bundle](#6-marketing-skills-bundle)
+7. [Sales Harness Bundle](#7-sales-harness-bundle)
 
 **Copilot in SharePoint Skills**
-4. [Content Expiration Sentinel](#4-content-expiration-sentinel)
-5. [Onboarding Path Synthesizer](#5-onboarding-path-synthesizer)
-6. [Process Compliance First-Pass](#6-process-compliance-first-pass)
+8. [Content Expiration Sentinel](#8-content-expiration-sentinel)
+9. [Onboarding Path Synthesizer](#9-onboarding-path-synthesizer)
+10. [Process Compliance First-Pass](#10-process-compliance-first-pass)
+11. [Excel to Branded HTML Dashboard](#11-excel-to-branded-html-dashboard)
+12. [Library Destination Advisor](#12-library-destination-advisor)
 
 **Summary**
 - [Copilot Cowork vs SharePoint Skills](#copilot-cowork-vs-sharepoint-skills)
@@ -229,11 +235,227 @@ Sarah Chen — VP of Operations, Alliance Partners. Regular interaction over the
 
 ---
 
+## 4. Morning Briefing
+
+### What It Is
+
+The Morning Briefing skill composes and delivers a personalized daily email covering the five things a professional needs to start the day: relevant industry news, communications requiring a reply, priority client updates, top committed tasks, and today's schedule. It replaces a manual morning review with a single AI-generated scan-in-60-seconds email sent directly to the user's inbox.
+
+### When to Use It
+
+- At the start of each workday, to get oriented before opening email or calendar
+- When travel, time zone differences, or a packed early schedule make a manual catch-up impractical
+- When managing several concurrent client engagements and needing to surface the most time-sensitive items first
+- On a scheduled basis, so the briefing is waiting when the user starts their day
+- When re-entering after a day out of office and needing a fast summary of what accumulated
+
+### How It Works
+
+The skill gathers five categories of signal in parallel: a web search for the five most relevant industry news stories from the past 24 hours (filtered to the user's role and sector), a scan of the previous day's email and Teams traffic for threads where a direct reply or action is owed, a sweep of client-facing updates across email, Teams, and project sources, a cross-source review of open tasks and commitments, and a calendar pull for today's schedule in the user's time zone.
+
+Distribution-list and broadcast traffic is filtered from the communications and client sections — only threads where the user is a direct, named participant with a specific action owed are included. Calendar events respect privacy: private appointments appear as time blocks, not raw titles. The output is formatted as clean HTML email with labeled section headers and sent to the user's inbox. The skill saves the HTML to an output folder and confirms file existence before reporting the send as complete.
+
+### How to Build It
+
+Place the `SKILL.md` file at:
+
+```
+cowork/
+  morning-briefing/
+    SKILL.md
+```
+
+The front matter requires `name` and `description`. No additional configuration files are required. To run the skill on a daily schedule, configure the trigger in Copilot Cowork's scheduling settings.
+
+### How to Use It
+
+- *"Send my morning briefing."*
+- *"Morning brief."*
+- *"Brief me."*
+- *"Start my day."*
+- Runs automatically on a daily schedule when configured.
+
+### Key Design Principles
+
+- **No fabrication.** If a section has no data, the skill says so — it does not fill sections with placeholder language or speculation.
+- **DL filtering.** Distribution-list and broadcast traffic is excluded from the communications and client sections. Only direct, actionable threads where the user has a named obligation are surfaced.
+- **Privacy-aware calendar.** Private and personal calendar events appear as opaque time blocks to avoid surfacing personal information in a sent email.
+
+---
+
+## 5. Synozur Board
+
+### What It Is
+
+The Synozur Board skill creates a virtual board of directors — nine distinct personas, each representing a specific domain of expertise — to review, challenge, and vote on any topic the user brings to them. It transforms a single Copilot session into a structured multi-perspective deliberation with independent voices that disagree, a Chair who frames without advocating, and formal voting when requested.
+
+### When to Use It
+
+- Before a major strategic decision, to stress-test reasoning from multiple angles before committing
+- When preparing a presentation or proposal and wanting to anticipate the strongest objections
+- When a team is converging too quickly and an outside challenge would sharpen the analysis
+- When a governance-critical question — succession, capital allocation, ethical dilemma — requires formal deliberation
+- When the user wants to hear how specific leadership perspectives (operational, financial, creative, macro) would react to a situation
+
+### How It Works
+
+The skill operates in three modes: **Advisory** (default exploration), **Board** (formal decision with vote), and **Review** (post-decision learning). The user's question is routed to three to five relevant personas plus a mandatory dissent slot — the voice most likely to disagree with emerging consensus.
+
+The nine board members each cover a distinct domain: Buffett (capital and downside), Krugman (macro and mechanism), Cuban (revenue and deal economics), Belichick (execution readiness), Obama (strategic deliberation and coalition), Nadella (platform strategy), Spielberg (narrative and audience), Sandberg (scalability and people systems), and Hillen (strategy discipline and definitional rigor). Each contribution is attributed and substantive — the Chair's framing establishes facts once, and personas react rather than re-narrate.
+
+For governance votes, all nine voices must contribute. Missing contributions are surfaced explicitly rather than inferred or silently dropped. The skill enforces length budgets per persona to keep responses dense rather than padded.
+
+### How to Build It
+
+Place the `SKILL.md` file at:
+
+```
+cowork/
+  synozur-board/
+    SKILL.md
+```
+
+The front matter requires `name` and `description`. No additional configuration files are required.
+
+### How to Use It
+
+- *"Board review of this proposal."*
+- *"Take this to the board — yea or nay."*
+- *"What does the board think about this acquisition?"*
+- *"Get Buffett and Belichick's take on this execution plan."*
+- *"Full board vote on whether to proceed."*
+
+### Key Design Principles
+
+- **Independent reasoning, not consensus synthesis.** Each persona contributes in their own voice. The Chair names where they align and diverge — it does not collapse them into a unified recommendation.
+- **Dissent is mandatory.** Every routed response includes a dissent slot. If no real counter-case exists, the skill says so explicitly.
+- **Governance acts require all nine.** A vote without all nine voices is not a complete board vote — missing contributions are surfaced, not approximated.
+
+---
+
+## 6. Marketing Skills Bundle
+
+### What It Is
+
+The Marketing Skills Bundle (`copilot-cowork-marketing`) is a chained set of ten Copilot Cowork skills covering the full marketing production cycle — from positioning research through content creation, repurposing, SEO/AEO optimization, distribution planning, and performance analysis. Skills pass their output to downstream skills via SharePoint, creating a closed loop that compounds with each cycle. The bundle is grounded in the user's own Microsoft 365 environment throughout.
+
+### When to Use It
+
+- When building or refreshing a go-to-market positioning framework and needing to ground it in real competitive and customer data from M365
+- When scaling content production without expanding headcount
+- When a content library exists but distribution, repurposing, and performance tracking are ad hoc
+- When branded Word and PowerPoint deliverables need to reflect the organization's actual visual identity
+- When performance data should feed back into editorial planning rather than sitting in a separate spreadsheet
+
+### How It Works
+
+An onboarding installer (`install-marketing-skills`) runs first — it interviews the user with Work IQ-drafted answers from their M365 data, captures brand colors, fonts, and logos, and writes a `variables.md` and `brand-assets.md` file to a SharePoint location. All ten downstream skills read from `variables.md` so company-specific values are defined once.
+
+The ten skills chain in sequence: `positioning-researcher` outputs a competitive dossier that feeds `content-strategist`'s editorial calendar; `copywriter` drafts from those briefs; `repurposing-engine` converts each long-form piece into eight to ten cross-channel assets; `seo-aeo-optimizer` handles keyword mapping and AI search signals; `distribution-planner` maps each asset to the right channel and timing; and `performance-analyst` closes the loop by feeding pipeline and engagement data back into the editorial calendar. `branded-doc-generator` and `branded-deck-generator` produce publish-ready Word and PowerPoint files from any confirmed draft.
+
+### How to Build It
+
+Drop the entire `copilot-cowork-marketing` folder into Copilot Cowork:
+
+```
+cowork/
+  copilot-cowork-marketing/
+    install-marketing-skills/
+    positioning-researcher/
+    content-strategist/
+    copywriter/
+    repurposing-engine/
+    seo-aeo-optimizer/
+    distribution-planner/
+    performance-analyst/
+    branded-doc-generator/
+    branded-deck-generator/
+    variables.md
+```
+
+After ingesting the folder, run `install-marketing-skills` first. The installer drafts all required variables from your M365 data and writes the completed `variables.md` and `brand-assets.md`. See the bundle's `README.md` for the full setup checklist and variables reference.
+
+### How to Use It
+
+- *"Install the marketing skills."* (runs the onboarding installer)
+- *"Run positioning researcher on [company] and [3 competitors]."*
+- *"Build an editorial calendar for the next two weeks."*
+- *"Write LinkedIn posts for the first five briefs."*
+- *"Repurpose this blog post into LinkedIn, email, and short-form video."*
+- *"Convert this draft into a branded deck."*
+
+### Key Design Principles
+
+- **Variables defined once.** All company-specific values live in `variables.md`. The installer writes this file from M365 data — skills do not require manual re-entry of company context.
+- **SharePoint as the connective tissue.** Each skill reads its upstream inputs from SharePoint and writes outputs back. The next skill in the chain picks up where the previous one left off.
+- **Branded output requires brand assets.** `branded-doc-generator` and `branded-deck-generator` halt if `brand-assets.md` is absent or incomplete. Brand assets must be captured during installation.
+
+---
+
+## 7. Sales Harness Bundle
+
+### What It Is
+
+The Sales Harness Bundle (`sales-harness-bundle`) is a three-agent outbound sales loop built on Copilot Cowork: **Prospector → Composer → Cadence**. Prospector researches leads and writes dossiers. Composer drafts first-touch and follow-up messages in the firm's voice and places every draft in Outlook before any send. Cadence detects sends, detects replies, and queues follow-ups. Every outbound message requires a human click to send — the bundle does not auto-send in v1.
+
+### When to Use It
+
+- When managing an active outbound prospecting pipeline and needing consistent research and drafting across many leads
+- When outbound messaging quality varies across reps and a shared voice standard would improve results
+- When follow-up cadence is inconsistently applied and leads are falling through the gaps
+- When compliance with opt-out detection, send caps, and domain suppression is required at the lead level
+- When a firm wants to maintain human review of every outbound message while reducing the manual drafting load
+
+### How It Works
+
+The harness represents each prospect as a markdown file with YAML frontmatter. State transitions drive the loop: `new → researched → draft_pending_approval → sent → awaiting_reply → replied / cadence_step_due / dormant`. Each agent handles a narrow slice of those transitions.
+
+Prospector sweeps leads with `state: new`, runs ICP qualification against the `icp-research` skill's definition and disqualifiers, and writes a research dossier into the prospect file. Composer picks up `state: researched` leads, reads the dossier and the firm's voice DNA, checks compliance (banned phrases, suppression list, send caps), drafts the message to both the markdown file and Outlook Drafts, and transitions the state to `draft_pending_approval`. Cadence scans sent items and the inbox to detect sends and replies, then queues pre-approved follow-up templates as additional drafts. Kill switches enforce hard stops: global pause, opt-out detection, send caps, and a reply-rate floor.
+
+Voice DNA extraction is required before the Composer will draft. The bundle includes `voice-dna-extract.md`, a prompt for extracting the firm's voice from twenty or more past outbound messages that received replies.
+
+### How to Build It
+
+Drop the `sales-harness-bundle/skills/` folder into Copilot Cowork's skills directory and replace the placeholder tokens with your firm's values:
+
+```
+cowork/
+  sales-harness-bundle/
+    skills/
+      prospector/
+      icp-research/
+      composer/
+      outbound-voice/
+      cadence/
+      cadence-rules/
+      compliance/
+      kill-switches/
+      prospect-files/
+      outlook-ops/
+```
+
+See `sales-harness-bundle/README.md` for the full placeholder list, OneDrive folder setup, voice DNA extraction procedure, and configuration reference.
+
+### How to Use It
+
+- *"Run prospector on all new leads."*
+- *"Run composer on researched leads."*
+- *"Run cadence."*
+- Operator commands `/run-prospector`, `/run-composer`, and `/run-cadence` can be registered as Cowork slash commands.
+
+### Key Design Principles
+
+- **Human in the loop for every send.** Composer creates an Outlook draft. The human reviews and clicks Send. Auto-send is a future configuration flag — not available in v1.
+- **Voice is load-bearing.** The Composer refuses to draft until voice DNA has been extracted from real past messages that received replies. Generic AI-voice drafts are explicitly blocked.
+- **Kill switches are hard stops.** Send caps, reply-rate floors, opt-out detection, and the global pause flag halt all three agents on every run — they are enforced constraints, not warnings.
+
+---
+
 # Copilot in SharePoint Skills
 
 ---
 
-## 4. Content Expiration Sentinel
+## 8. Content Expiration Sentinel
 
 ### What It Is
 
@@ -299,7 +521,7 @@ The front matter requires `name` and `description`. Unlike Cowork skills, ShareP
 
 ---
 
-## 5. Onboarding Path Synthesizer
+## 9. Onboarding Path Synthesizer
 
 ### What It Is
 
@@ -374,7 +596,7 @@ The front matter requires `name` and `description`. The skill is activated by Co
 
 ---
 
-## 6. Process Compliance First-Pass
+## 10. Process Compliance First-Pass
 
 ### What It Is
 
@@ -441,6 +663,106 @@ The front matter requires `name` and `description`. The skill depends on a confi
 - **Checklist-driven, not interpretive.** The skill evaluates only against the elements defined in the relevant compliance checklist — it does not introduce subjective quality assessments.
 - **Transparent reasoning.** Every "Absent" or "Unclear" classification includes a note explaining the basis, so authors know exactly what is needed, not just that something is wrong.
 - **Read-only, always.** The skill never modifies or rewrites the document. Its role is diagnostic; remediation is the author's responsibility.
+
+---
+
+## 11. Excel to Branded HTML Dashboard
+
+### What It Is
+
+The Excel to Branded HTML Dashboard skill converts an Excel workbook stored in SharePoint into a self-contained, branded HTML dashboard that surfaces key data, tables, and summaries as readable web content. It removes the dependency on Excel for stakeholders who need to view data without installing or opening the application, and produces a shareable page that reflects the organization's visual identity.
+
+### When to Use It
+
+- When a reporting workbook needs to be shared with stakeholders who should not need Excel to view it
+- When a dashboard or summary tab exists in a workbook and needs to be published as a webpage
+- When operational or financial data should be accessible as a branded internal page rather than a raw spreadsheet
+- When a workbook is marked confidential and a controlled-distribution HTML version is preferred over sharing the source file
+- When periodic reports need to be converted to a consistent, scannable format without manual reformatting
+
+### How It Works
+
+The skill begins by locating the specified Excel file in SharePoint, or presenting up to five recent `.xlsx` matches for selection if the file is not specified. It then inspects the workbook structure — listing worksheets, identifying named ranges, Excel Tables, chart objects, and classifying sheets as data dumps or summary/report views.
+
+Content extraction maps workbook elements to dashboard components: single-value KPI cells become headline metric tiles, Excel Tables become sortable HTML tables, named ranges become labeled data blocks, and charts are rendered as descriptive text cards with the chart title and a plain-text data summary. Branding is determined in priority order from sheet tab colors, SharePoint site theme colors, or a clean neutral default if neither is available.
+
+The output is a self-contained HTML file with all CSS inlined, a responsive layout using CSS Grid or Flexbox, a sticky navigation bar with anchor links to each sheet section, and a footer marking the source file name and generation date. Personally identifiable information is flagged before rendering, and content marked confidential receives a visible distribution-warning banner.
+
+### How to Build It
+
+Place the `SKILL.md` file at:
+
+```
+sharepoint/
+  excel-to-html-dashboard/
+    SKILL.md
+```
+
+The front matter requires `name` and `description`. The skill is activated by Copilot in SharePoint when a user asks to convert, publish, or create a dashboard from an Excel workbook.
+
+### How to Use It
+
+- *"Turn this spreadsheet into a dashboard."*
+- *"Publish our Q2 data workbook as a webpage."*
+- *"Create an HTML report from this Excel file."*
+- *"Make our data visible without Excel."*
+- *"Convert this spreadsheet to a branded page."*
+
+### Key Design Principles
+
+- **No data fabrication.** Values not present in the workbook are never inserted. Charts that cannot be reproduced visually are represented as descriptive text cards only.
+- **Branding from available signals.** The skill determines branding from tab colors and site theme without prompting the user — custom branding prompts are issued only when the user has explicitly requested them.
+- **Confidentiality surfaced, not assumed.** Content marked confidential receives a visible banner warning; the skill does not suppress or block output, but ensures the user is aware before distributing.
+
+---
+
+## 12. Library Destination Advisor
+
+### What It Is
+
+The Library Destination Advisor recommends the most appropriate SharePoint document library for a piece of content when the user is unsure where to upload it. It evaluates all libraries visible to the user against the document's type, intended audience, sensitivity, and lifecycle, and returns a ranked primary recommendation with the required metadata to fill in — rather than leaving the decision to guesswork.
+
+### When to Use It
+
+- When uploading a document to a site with many libraries and the right destination is not obvious
+- When a new team member needs guidance on where different content types belong
+- When a library structure has evolved and existing naming conventions no longer make destinations self-evident
+- When a document carries a sensitivity label and library-level retention or permission alignment matters before upload
+- When the user wants to confirm there is no more appropriate destination before creating a new library
+
+### How It Works
+
+The skill first gathers information about the content: file name, type, purpose, intended audience, draft or final status, and any sensitivity indicators. It then retrieves all document libraries visible to the user, collecting each library's name, description, effective permission level for the user, content types, metadata columns, retention and sensitivity labels, and general activity level.
+
+Libraries are scored against five factors: name and description match, content type alignment, metadata fit, audience alignment, and lifecycle or retention fit. The highest-scoring library becomes the primary recommendation. If two libraries tie, the more specific scope is preferred. If no library scores above two of five factors, the skill says so plainly rather than forcing a low-confidence recommendation. Libraries where the user does not have at least Contribute permission are excluded before evaluation.
+
+The output names the recommended library with a one-sentence rationale, lists any required metadata the user will need to fill in, and briefly describes a close alternative with its key trade-off. If the content carries a sensitivity marker, the skill adds a reminder to verify that the target library's permissions and labels are appropriate before uploading.
+
+### How to Build It
+
+Place the `SKILL.md` file at:
+
+```
+sharepoint/
+  library-destination-advisor/
+    SKILL.md
+```
+
+The front matter requires `name` and `description`. The skill is activated by Copilot in SharePoint when a user asks where to save or upload a document.
+
+### How to Use It
+
+- *"Where should I put this document?"*
+- *"Which library should I upload this to?"*
+- *"I don't know where this belongs — can you advise?"*
+- *"What's the right place to save this policy draft?"*
+- *"Find me the best library for this report."*
+
+### Key Design Principles
+
+- **No upload on behalf of the user.** The skill recommends only — it never performs the upload, pre-fills metadata, or creates new libraries without explicit user confirmation.
+- **Permission-gated recommendations.** Libraries where the user does not have at least Contribute access are excluded before any scoring or ranking occurs.
+- **Honest about poor matches.** When no library scores well, the skill says so directly and describes what kind of library would be appropriate — it does not force a low-confidence recommendation.
 
 ---
 
