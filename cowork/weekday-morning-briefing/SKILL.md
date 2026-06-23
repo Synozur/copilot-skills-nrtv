@@ -5,9 +5,10 @@ description: |
   single start-of-day email covering top news, location-aware weather, Boston
   sports, enterprise AI news, open threads awaiting reply, priority client
   updates, committed tasks, and today's calendar in Pacific Time.
-  Use when Chris asks to "send my morning briefing", "give me my morning
-  briefing", "run my briefing", "start my day", "what's on my plate today",
+  Use when Chris asks to "send my weekday morning briefing", "give me my weekday briefing",
+  "run my weekday briefing", "start my workday", "what's on my plate today",
   "brief me for today", or "what did I miss overnight" on a workday.
+  Only run if the requesting user is Chris McNulty; otherwise use `morning-briefing`.
   Do NOT use for: end-of-day wrap-ups, full inbox triage of every message,
   scheduling or rescheduling (use schedule-meeting), deep prep for one named
   meeting (use meeting-intel), or weekend catch-ups unrelated to a workday start.
