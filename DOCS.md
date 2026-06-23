@@ -1,6 +1,6 @@
 # Enterprise AI Skills Documentation
 
-This document covers all thirteen AI skill entries in this repository — eight personal skills and bundles built for **Copilot Cowork** and five organizational skills built for **Copilot in SharePoint**. Each section explains what the skill does, when to use it, how it works, and how to put it into practice.
+This document covers all fourteen AI skill entries in this repository — nine personal skills and bundles built for **Copilot Cowork** and five organizational skills built for **Copilot in SharePoint**. Each section explains what the skill does, when to use it, how it works, and how to put it into practice.
 
 ---
 
@@ -15,13 +15,14 @@ This document covers all thirteen AI skill entries in this repository — eight 
 6. [Marketing Skills Bundle](#6-marketing-skills-bundle)
 7. [Sales Harness Bundle](#7-sales-harness-bundle)
 8. [Narrative Strategies Brand Kit Word Generator](#8-narrative-strategies-brand-kit-word-generator)
+9. [Narrative Strategies Brand Kit Deck Generator](#9-narrative-strategies-brand-kit-deck-generator)
 
 **Copilot in SharePoint Skills**
-9. [Content Expiration Sentinel](#9-content-expiration-sentinel)
-10. [Onboarding Path Synthesizer](#10-onboarding-path-synthesizer)
-11. [Process Compliance First-Pass](#11-process-compliance-first-pass)
-12. [Excel to Branded HTML Dashboard](#12-excel-to-branded-html-dashboard)
-13. [Library Destination Advisor](#13-library-destination-advisor)
+10. [Content Expiration Sentinel](#10-content-expiration-sentinel)
+11. [Onboarding Path Synthesizer](#11-onboarding-path-synthesizer)
+12. [Process Compliance First-Pass](#12-process-compliance-first-pass)
+13. [Excel to Branded HTML Dashboard](#13-excel-to-branded-html-dashboard)
+14. [Library Destination Advisor](#14-library-destination-advisor)
 
 **Summary**
 - [Copilot Cowork vs SharePoint Skills](#copilot-cowork-vs-sharepoint-skills)
@@ -499,11 +500,58 @@ No additional configuration is required. Brand values are bundled in `references
 
 ---
 
+## 9. Narrative Strategies Brand Kit Deck Generator
+
+### What It Is
+
+The Narrative Strategies Brand Kit Deck Generator (`pptx-nrtv-brandkit`) produces client-ready PowerPoint presentations (.pptx) that carry the Narrative Strategies visual identity — Montserrat fonts, the navy `#184579` palette, gold and cyan accents, and the NARRATIVE logo — applied to clean 16:9 slides composed for the content at hand. Like its Word counterpart, it is the "brand DNA, my layout" path: the skill brings the brand elements and the user brings the structure. It does not reproduce the fixed slide layouts of the official Narrative pitch deck.
+
+### When to Use It
+
+- When delivering a client presentation that should carry the Narrative Strategies visual identity
+- When a custom slide structure is needed rather than the fixed layouts of the official deck
+- When the user asks to apply Narrative fonts and colors to a presentation they are composing
+- When a deliverable needs to be brand-consistent without requiring access to the original deck file
+
+### How It Works
+
+The skill reads brand values from its bundled `references/brand.md` and `assets/` files — no runtime configuration is required. The user supplies content (text, an outline, or a source file). The skill composes a slide plan — choosing layouts appropriate for the content type (title, section divider, content slide, summary) and mapping headings, body text, bullets, tables, and visuals to slide blocks. It generates the `.pptx` applying the Narrative color palette, Montserrat typography, and appropriate logo placement (white wordmark on navy slides, navy wordmark or mark on light slides). It verifies the output file exists before reporting completion. Any numeric totals, percentages, or deltas are computed with a code tool rather than approximated.
+
+### How to Build It
+
+Place the skill folder at:
+
+```
+cowork/
+  pptx-nrtv-brandkit/
+    SKILL.md
+    assets/
+    references/
+```
+
+No additional configuration is required. Brand values are bundled in `references/brand.md` and `assets/`. The skill requires a Python environment with `python-pptx` available.
+
+### How to Use It
+
+- *"Make a Narrative-branded deck for this proposal."*
+- *"Apply Narrative Strategies branding to these slides."*
+- *"Use the Narrative fonts and colors for this presentation."*
+- *"NRTV brand styling, my slide structure."*
+
+### Key Design Principles
+
+- **Brand DNA, not template layout.** The skill applies fonts, colors, and logos from the Narrative brand without reproducing the fixed slide layouts or cover page of the official pitch deck. Slide structure is composed fresh for each presentation.
+- **Correct logo placement.** The white wordmark is used only on dark (navy) backgrounds; the navy wordmark or mark is used only on light backgrounds. No recoloring of logos occurs.
+- **No fabrication.** Missing facts are represented as clearly-marked placeholders (e.g., `[Add Q3 figure]`), never invented. Numbers are computed, not estimated.
+- **Verify before reporting.** The skill confirms the output file exists before telling the user the presentation is ready.
+
+---
+
 # Copilot in SharePoint Skills
 
 ---
 
-## 9. Content Expiration Sentinel
+## 10. Content Expiration Sentinel
 
 ### What It Is
 
@@ -569,7 +617,7 @@ The front matter requires `name` and `description`. Unlike Cowork skills, ShareP
 
 ---
 
-## 10. Onboarding Path Synthesizer
+## 11. Onboarding Path Synthesizer
 
 ### What It Is
 
@@ -644,7 +692,7 @@ The front matter requires `name` and `description`. The skill is activated by Co
 
 ---
 
-## 11. Process Compliance First-Pass
+## 12. Process Compliance First-Pass
 
 ### What It Is
 
@@ -714,7 +762,7 @@ The front matter requires `name` and `description`. The skill depends on a confi
 
 ---
 
-## 12. Excel to Branded HTML Dashboard
+## 13. Excel to Branded HTML Dashboard
 
 ### What It Is
 
@@ -764,7 +812,7 @@ The front matter requires `name` and `description`. The skill is activated by Co
 
 ---
 
-## 13. Library Destination Advisor
+## 14. Library Destination Advisor
 
 ### What It Is
 
