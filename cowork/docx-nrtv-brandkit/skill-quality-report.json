@@ -1,0 +1,53 @@
+{
+  "description": "Generates Word documents (.docx) for the client Narrative Strategies using only the brand DNA \u2014 Montserrat fonts, the navy #103F72 palette, and the NARRATIVE logo \u2014 applied to a CLEAN, flexible layout built from scratch. Does NOT reproduce the official template's cover page, header/footer artwork, or fixed layout. Use when the user asks to \"make a Narrative-branded Word doc\", \"apply Narrative Strategies branding to this\", \"use the Narrative fonts and colors\", \"NRTV brand styling without the template layout\", \"Narrative brand kit document\", or wants a custom-layout doc that just carries the Narrative look. Do NOT use for the full official template with its cover image and exact layout \u2014 that is docx-nrtv-brand. Do NOT use for Synozur documents (use docx-synozur-brand) or non-Narrative work.",
+  "dimension_notes": {
+    "instruction_specificity": [
+      "16 workflow line(s)",
+      "no example block",
+      "names tools / data sources",
+      "specifies output format"
+    ],
+    "robustness": [
+      "has Guardrails section",
+      "3 guardrail-style rule(s)",
+      "handles missing-data / failure"
+    ],
+    "scope_boundaries": [
+      "has 'When NOT to Use' section",
+      "description states exclusions",
+      "focused single-domain scope"
+    ],
+    "trigger_clarity": [
+      "5 explicit trigger phrase(s)",
+      "has exclusion clause"
+    ]
+  },
+  "dimensions": {
+    "instruction_specificity": 23,
+    "robustness": 17,
+    "scope_boundaries": 23,
+    "trigger_clarity": 25
+  },
+  "faithfulness": {
+    "detail": "instructs grounding / no-fabrication",
+    "status": "PASS"
+  },
+  "grade": "Excellent",
+  "improvements": [],
+  "mvb_pass": true,
+  "mvb_threshold": 70,
+  "path": "/mnt/user-config/.claude/skills/docx-nrtv-brandkit/SKILL.md",
+  "risk": {
+    "factors": [
+      "takes actions (autonomy / blast radius)"
+    ],
+    "launch_floor": 70,
+    "requires_behavioral": true,
+    "requires_human_review": false,
+    "tier": "medium"
+  },
+  "safety": [],
+  "skill_name": "docx-nrtv-brandkit",
+  "timestamp": "2026-06-23 21:29 UTC",
+  "total": 88
+}
