@@ -146,7 +146,7 @@ assemble. Resolve "today" and the 24h/48h windows from the current local time
 
 7. **Top 5 Committed Tasks** — the top 5 tasks/deliverables/to-dos across his
    task list, recent email, Teams, and active projects. Include owner/context
-   and any due dates. Pull from `TaskList`, flagged email, and explicit
+   and any due dates. Pull from his task list, flagged email, and explicit
    commitments surfaced in sections 5-6.
 
 8. **Today's Calendar** — chronological, as a table: time (PT), subject,
