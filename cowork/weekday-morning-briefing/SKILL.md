@@ -26,7 +26,7 @@ couple of minutes.
 
 ## Delivery
 
-- **To:** `chris.mcnulty@synozur.com` and `briefing@synozur.com`
+- **To:** `<Chris's primary email>` and `<briefing alias email>`
 - **Subject:** `Morning Briefing — {today's date}` (e.g. `Morning Briefing — June 23, 2026`)
 - **All times in Pacific Time (PT).**
 
@@ -54,9 +54,9 @@ renders correctly in Outlook/M365 mail when the body comes from a file with
      (Time PT / Subject / With / Where) and one `<tr>` per event, bordered `<td>`s.
    - Suggested body wrapper:
      `font-family:'Segoe UI',Arial,sans-serif; color:#1a1a1a; line-height:1.5; max-width:760px;`
-3. **Save the document to `output/morning-briefing-{date}.html`.**
+3. **Save the document to `output/morning-briefing-{YYYY-MM-DD}.html`.**
 4. **Send the saved file as the body:**
-   `SendEmailWithAttachments(to=["chris.mcnulty@synozur.com","briefing@synozur.com"], subject="Morning Briefing — {date}", body_file_path="output/morning-briefing-{date}.html", content_type="HTML")`.
+   `SendEmailWithAttachments(to=[<Chris's primary email>, <briefing alias email>], subject="Morning Briefing — {human-readable date}", body_file_path="output/morning-briefing-{YYYY-MM-DD}.html", content_type="HTML")`.
    Pass the file path via `body_file_path` — do **not** paste the HTML into an
    inline `body` argument (that is the path that gets flattened/escaped).
 
@@ -78,10 +78,10 @@ inline body or invent a tables-only workaround.
 
 ## Workflow
 
-Create a task list so progress is visible (`TaskCreate`). Run the independent
+Create a task list so progress is visible. Run the independent
 lookups in parallel where possible (calendar, email, Teams, web searches), then
 assemble. Resolve "today" and the 24h/48h windows from the current local time
-(PST/PDT); on Monday, extend look-backs through the weekend.
+(PT); on Monday, extend look-backs through the weekend.
 
 ### Section order (all eight, in this sequence)
 
@@ -89,7 +89,7 @@ assemble. Resolve "today" and the 24h/48h windows from the current local time
    factual sentence each. No editorializing, no opinion.
 
 2. **Weather** — first determine Chris's **current location**: scan recent
-   `ListCalendarView` events, travel blocks, and `GetAutoReplySettings` /
+   `ListCalendarView` events, travel blocks, and any available
    out-of-office entries. He's based in the Pacific Northwest (Bothell, WA) but
    travels frequently — use the location implied by today's events if he's on
    the road, otherwise default to Bothell. Then `web_search` today's forecast
