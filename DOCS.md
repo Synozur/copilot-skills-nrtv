@@ -1,6 +1,6 @@
 # Enterprise AI Skills Documentation
 
-This document covers all twelve AI skill entries in this repository — seven personal skills and bundles built for **Copilot Cowork** and five organizational skills built for **Copilot in SharePoint**. Each section explains what the skill does, when to use it, how it works, and how to put it into practice.
+This document covers all thirteen AI skill entries in this repository — eight personal skills and bundles built for **Copilot Cowork** and five organizational skills built for **Copilot in SharePoint**. Each section explains what the skill does, when to use it, how it works, and how to put it into practice.
 
 ---
 
@@ -14,13 +14,14 @@ This document covers all twelve AI skill entries in this repository — seven pe
 5. [Synozur Board](#5-synozur-board)
 6. [Marketing Skills Bundle](#6-marketing-skills-bundle)
 7. [Sales Harness Bundle](#7-sales-harness-bundle)
+8. [Narrative Strategies Brand Kit Word Generator](#8-narrative-strategies-brand-kit-word-generator)
 
 **Copilot in SharePoint Skills**
-8. [Content Expiration Sentinel](#8-content-expiration-sentinel)
-9. [Onboarding Path Synthesizer](#9-onboarding-path-synthesizer)
-10. [Process Compliance First-Pass](#10-process-compliance-first-pass)
-11. [Excel to Branded HTML Dashboard](#11-excel-to-branded-html-dashboard)
-12. [Library Destination Advisor](#12-library-destination-advisor)
+9. [Content Expiration Sentinel](#9-content-expiration-sentinel)
+10. [Onboarding Path Synthesizer](#10-onboarding-path-synthesizer)
+11. [Process Compliance First-Pass](#11-process-compliance-first-pass)
+12. [Excel to Branded HTML Dashboard](#12-excel-to-branded-html-dashboard)
+13. [Library Destination Advisor](#13-library-destination-advisor)
 
 **Summary**
 - [Copilot Cowork vs SharePoint Skills](#copilot-cowork-vs-sharepoint-skills)
@@ -451,11 +452,58 @@ See `sales-harness-bundle/README.md` for the full placeholder list, OneDrive fol
 
 ---
 
+## 8. Narrative Strategies Brand Kit Word Generator
+
+### What It Is
+
+The Narrative Strategies Brand Kit Word Generator (`docx-nrtv-brandkit`) produces client-ready Word documents (.docx) that carry the Narrative Strategies visual identity — Montserrat fonts, the navy `#103F72` palette, and the NARRATIVE logo — applied to a clean layout composed for the content at hand. It is the "brand DNA, my layout" path: the skill brings the brand elements and the user brings the structure. It is distinct from the official Narrative template, which has a fixed cover page, header artwork, and page-numbering scheme.
+
+### When to Use It
+
+- When delivering a brief, memo, one-pager, or report to a Narrative Strategies client and the document should carry their visual identity
+- When a custom layout is needed rather than the fixed structure of the official template
+- When the user asks to apply Narrative fonts and colors to a document they are composing
+- When a deliverable needs to be brand-consistent without requiring access to the official template file
+
+### How It Works
+
+The skill reads brand values from its bundled `references/brand.md` and `assets/` files — no runtime configuration is required. The user supplies content (text, an outline, or a source file). The skill composes a JSON content specification — choosing a layout appropriate for the document type (brief, memo, one-pager, report) and mapping headings, body text, bullets, tables, and quotes to block types. It writes that spec to `working/nrtv_content.json` and generates the `.docx` by running `scripts/build_doc.py` with Python. It verifies the output file exists in `output/` before reporting completion. Any numeric totals, percentages, or deltas are computed with a code tool rather than approximated.
+
+### How to Build It
+
+Place the skill folder at:
+
+```
+cowork/
+  docx-nrtv-brandkit/
+    SKILL.md
+    assets/
+    references/
+    scripts/
+```
+
+No additional configuration is required. Brand values are bundled in `references/brand.md` and `assets/`. The script requires `python-docx` to be available in the environment.
+
+### How to Use It
+
+- *"Make a Narrative-branded Word doc for this proposal."*
+- *"Apply Narrative Strategies branding to this brief."*
+- *"Use the Narrative fonts and colors for this memo."*
+- *"NRTV brand styling, my layout."*
+
+### Key Design Principles
+
+- **Brand DNA, not template layout.** The skill applies fonts, colors, and logos from the Narrative brand without reproducing the fixed cover page or header artwork of the official template. Layout is composed fresh for each document.
+- **No fabrication.** Missing facts are represented as clearly-marked placeholders (e.g., `[Add Q3 figure]`), never invented. Numbers are computed, not estimated.
+- **Verify before reporting.** The skill confirms the output file exists in `output/` before telling the user the document is ready.
+
+---
+
 # Copilot in SharePoint Skills
 
 ---
 
-## 8. Content Expiration Sentinel
+## 9. Content Expiration Sentinel
 
 ### What It Is
 
@@ -521,7 +569,7 @@ The front matter requires `name` and `description`. Unlike Cowork skills, ShareP
 
 ---
 
-## 9. Onboarding Path Synthesizer
+## 10. Onboarding Path Synthesizer
 
 ### What It Is
 
@@ -596,7 +644,7 @@ The front matter requires `name` and `description`. The skill is activated by Co
 
 ---
 
-## 10. Process Compliance First-Pass
+## 11. Process Compliance First-Pass
 
 ### What It Is
 
@@ -666,7 +714,7 @@ The front matter requires `name` and `description`. The skill depends on a confi
 
 ---
 
-## 11. Excel to Branded HTML Dashboard
+## 12. Excel to Branded HTML Dashboard
 
 ### What It Is
 
@@ -716,7 +764,7 @@ The front matter requires `name` and `description`. The skill is activated by Co
 
 ---
 
-## 12. Library Destination Advisor
+## 13. Library Destination Advisor
 
 ### What It Is
 
