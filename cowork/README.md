@@ -8,6 +8,17 @@ Use one subfolder per skill, for example:
 
 Current skills include:
 
+### Core Skills
+
+- `decision-log-builder/` — builds structured decision logs from emails, meetings, and Teams messages
+- `docx-nrtv-brandkit/` — generates Narrative Strategies-branded Word documents using the brand kit
+- `morning-briefing/` — composes and sends a daily morning briefing email
+- `pptx-nrtv-brandkit/` — provides Narrative Strategies deck brand assets and references
+- `pre-commitment-capacity-check/` — reviews workload and flags capacity risks before new commitments
+- `spot-financial-outliers/` — reviews a financial statement and flags values that look materially unusual compared to historical periods, peer line items, or expected patterns
+- `stakeholder-intelligence-brief/` — prepares a two-minute stakeholder briefing from recent email and Teams history
+- `synozur-board/` — provides board review, board opinion, board vote, or board perspective on a topic
+
 ### Sales Harness Bundle
 
 - `sales-harness-bundle/skills/prospector/` — researches leads and writes prospect dossiers
@@ -33,7 +44,3 @@ Current skills include:
 - `copilot-cowork-marketing/performance-analyst/` — analyzes content performance and recommendations
 - `copilot-cowork-marketing/branded-doc-generator/` — formats content into branded Word documents
 - `copilot-cowork-marketing/branded-deck-generator/` — formats content into branded PowerPoint decks
-
-### Other Cowork Skills
-
-- `spot-financial-outliers/` — reviews a financial statement and flags values that look materially unusual compared to historical periods, peer line items, or expected patterns.
