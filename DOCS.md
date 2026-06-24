@@ -1,6 +1,6 @@
 # Enterprise AI Skills Documentation
 
-This document covers all fourteen AI skill entries in this repository — nine personal skills and bundles built for **Copilot Cowork** and five organizational skills built for **Copilot in SharePoint**. Each section explains what the skill does, when to use it, how it works, and how to put it into practice.
+This document covers all fifteen AI skill entries in this repository — ten personal skills and bundles built for **Copilot Cowork** and five organizational skills built for **Copilot in SharePoint**. Each section explains what the skill does, when to use it, how it works, and how to put it into practice.
 
 ---
 
@@ -16,13 +16,14 @@ This document covers all fourteen AI skill entries in this repository — nine p
 7. [Sales Harness Bundle](#7-sales-harness-bundle)
 8. [Narrative Strategies Brand Kit Word Generator](#8-narrative-strategies-brand-kit-word-generator)
 9. [Narrative Strategies Brand Kit Deck Generator](#9-narrative-strategies-brand-kit-deck-generator)
+10. [Spot Financial Outliers](#10-spot-financial-outliers)
 
 **Copilot in SharePoint Skills**
-10. [Content Expiration Sentinel](#10-content-expiration-sentinel)
-11. [Onboarding Path Synthesizer](#11-onboarding-path-synthesizer)
-12. [Process Compliance First-Pass](#12-process-compliance-first-pass)
-13. [Excel to Branded HTML Dashboard](#13-excel-to-branded-html-dashboard)
-14. [Library Destination Advisor](#14-library-destination-advisor)
+11. [Content Expiration Sentinel](#11-content-expiration-sentinel)
+12. [Onboarding Path Synthesizer](#12-onboarding-path-synthesizer)
+13. [Process Compliance First-Pass](#13-process-compliance-first-pass)
+14. [Excel to Branded HTML Dashboard](#14-excel-to-branded-html-dashboard)
+15. [Library Destination Advisor](#15-library-destination-advisor)
 
 **Summary**
 - [Copilot Cowork vs SharePoint Skills](#copilot-cowork-vs-sharepoint-skills)
@@ -551,7 +552,60 @@ No additional configuration is required. Brand values are bundled in `references
 
 ---
 
-## 10. Content Expiration Sentinel
+## 10. Spot Financial Outliers
+
+### What It Is
+
+The Spot Financial Outliers skill reviews a financial statement and identifies values that appear materially unusual compared to historical periods, peer line items, or expected financial patterns. It helps finance and leadership focus on the handful of items that may warrant follow-up instead of forcing them to scan every line in an income statement, balance sheet, or cash flow statement.
+
+### When to Use It
+
+- When a user uploads or references a financial statement and wants an analytical review
+- When a finance team needs to flag unusual growth, margin shifts, or balance-sheet movements
+- When leadership wants a short list of noteworthy anomalies before a review meeting
+- When comparing a statement to prior periods or benchmarks and looking for outliers
+
+### How It Works
+
+The skill first identifies the file and the statement type, then extracts the relevant table data using the worksheet or workbook reader. It checks the statement across time-based columns and line items, looking for large variances, ratio-based anomalies, category inconsistencies, and structural red flags. It then prioritizes the most meaningful findings and presents them as a concise summary with quantified changes where possible.
+
+The skill does not restate the results or issue audit opinions. Its role is to surface the items most likely to deserve follow-up and explain why they stand out.
+
+### How to Build It
+
+Place the `SKILL.md` file at:
+
+```
+cowork/
+  spot-financial-outliers/
+    SKILL.md
+```
+
+The front matter must include `name`, `description`, and `cowork` metadata with a `category` and `icon` field. No additional configuration files are required.
+
+### How to Use It
+
+- *"Spot outliers in this income statement."*
+- *"Review this balance sheet and call out anything unusual."*
+- *"Check this cash flow statement for anomalies."*
+- *"Analyze this financial statement for outliers and explain why they matter."*
+- *"Which line items look out of line in this report?"*
+
+### Example Output
+
+- Revenue grew 38% quarter over quarter while operating expenses increased 61%, suggesting a margin compression trend worth review.
+- Accounts receivable increased sharply without a matching change in collections or sales, which may warrant follow-up.
+- A one-time restructuring charge appears materially larger than the prior three periods and should be verified before leadership interpretation.
+
+### Key Design Principles
+
+- **Analytical review, not financial advice.** The skill highlights potential anomalies; it does not opine on accounting treatment or compliance.
+- **Materiality beats noise.** The output focuses on items with meaningful size or change.
+- **Context matters.** The skill distinguishes likely business-driven change from potential anomalies and says when more context is needed.
+
+---
+
+## 11. Content Expiration Sentinel
 
 ### What It Is
 
@@ -617,7 +671,7 @@ The front matter requires `name` and `description`. Unlike Cowork skills, ShareP
 
 ---
 
-## 11. Onboarding Path Synthesizer
+## 12. Onboarding Path Synthesizer
 
 ### What It Is
 
@@ -692,7 +746,7 @@ The front matter requires `name` and `description`. The skill is activated by Co
 
 ---
 
-## 12. Process Compliance First-Pass
+## 13. Process Compliance First-Pass
 
 ### What It Is
 
@@ -762,7 +816,7 @@ The front matter requires `name` and `description`. The skill depends on a confi
 
 ---
 
-## 13. Excel to Branded HTML Dashboard
+## 14. Excel to Branded HTML Dashboard
 
 ### What It Is
 
@@ -812,7 +866,7 @@ The front matter requires `name` and `description`. The skill is activated by Co
 
 ---
 
-## 14. Library Destination Advisor
+## 15. Library Destination Advisor
 
 ### What It Is
 
